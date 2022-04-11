@@ -1,5 +1,4 @@
 import chalk from "chalk"
-import res from "express/lib/response.js"
 import Planet from "../models/planet.js"
 
 export const getPlanets = async (req, res) => {
@@ -27,6 +26,7 @@ export const getPlanet = async (req, res) => {
     res.json({ error: error })
   }
 }
+
 export const addPlanet = async (req, res) => {
   try {
     const planet = new Planet(req.body)
@@ -36,6 +36,7 @@ export const addPlanet = async (req, res) => {
     res.json({ error: error })
   }
 }
+
 export const updatePlanet = async (req, res) => {
   try {
     const { id } = req.params
@@ -45,6 +46,7 @@ export const updatePlanet = async (req, res) => {
     res.json({ error: error })
   }
 }
+
 export const deletePlanet = async (req, res) => {
   try {
     const { id } = req.params
