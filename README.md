@@ -9,7 +9,7 @@ ___
 `npm install`
 
 #### Seed Data
-`npm db:seed`
+`npm run db:seed`
 
 #### Start Server
 `npm start`
