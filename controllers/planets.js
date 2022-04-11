@@ -15,9 +15,14 @@ export const getPlanets = async (req, res) => {
 
 export const getPlanet = async (req, res) => {
   try {
-    const { name } = req.params;
-    const planet = await Planet.findOne({ name: name })
-    res.json(planet)
+    const { planet } = req.params;
+    console.log(planet)
+    let filter = { name: planet }
+    const searchResult = await Planet.findOne(filter)
+    if (searchResult) {
+      return res.json(searchResult)
+    }
+    res.status(400).json({ message: 'planet not found' })
   } catch (error) {
     res.json({ error: error })
   }

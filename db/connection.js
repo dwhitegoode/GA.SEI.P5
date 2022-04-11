@@ -3,8 +3,6 @@ import chalk from "chalk";
 
 const MONGODB_URI = process.env.PROD_DB || 'mongodb://localhost/solor-system'
 
-mongoose.set('returnOriginal', false)
-
 mongoose.connect(MONGODB_URI).catch(error =>
   console.log("Unable to establish mongoDB connection:", error.message)
 )
